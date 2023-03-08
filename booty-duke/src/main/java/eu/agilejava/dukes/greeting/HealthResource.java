@@ -7,13 +7,12 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.time.LocalDate;
 
-@Path("booty-duke")
-public class HelloDukeResource {
+@Path("")
+public class HealthResource {
 
-    @Path("hello")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public DukesGreetingRecord sayHello() {
-        return new DukesGreetingRecord("Howdy Jakarta RESTful Web Services SE Bootstrap", LocalDate.now());
+        return new DukesGreetingRecord("Health check", LocalDate.now());
     }
 }

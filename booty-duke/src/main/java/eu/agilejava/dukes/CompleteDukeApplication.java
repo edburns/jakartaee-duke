@@ -5,8 +5,6 @@ import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.SeBootstrap;
 import jakarta.ws.rs.core.Application;
 
-import java.net.URI;
-
 @ApplicationPath("")
 public class CompleteDukeApplication extends Application {
 
@@ -14,8 +12,10 @@ public class CompleteDukeApplication extends Application {
 
         Application app = new CompleteDukeApplication();
         SeBootstrap.Configuration config = SeBootstrap.Configuration.builder()
-                .rootPath("booty-duke")
-                .port(8081)
+                .rootPath("")
+                .host("0.0.0.0")
+                .port(80) // default port for app service
+                .protocol("HTTP")
                 .build();
 
         SeBootstrap.start(app, config).thenAccept(instance -> {
